@@ -70,7 +70,7 @@ module.exports = function (RED) {
         }
 
         self.readDir = function readDir(path, callback) {
-            let readdir = self.smbClient.readdir(path);
+            let readdir = self.smbClient.readdir(path, { stats: true });
 
             readdir.then((data) => {
                 callback(null, data);
